@@ -1,0 +1,9 @@
+.login-col {
+    padding: 0
+}
+
+.login-image {
+    background-image: url('../../login1.jpg');
+    height:100vh;
+    overflow:hidden;
+}

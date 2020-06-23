@@ -1,0 +1,68 @@
+.login {
+margin-top: 15%
+}
+
+.login-label {
+    color: rgb(116, 116, 252);
+    font-weight: 700;
+    
+}
+
+.sign-up {
+    color: black;
+    font-weight: 500;
+}
+
+.button-text {
+    font-size: 16px;
+}
+
+.button-submit {
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+.login-form-elements {
+    /* float: left; */
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+}
+
+.signup-form-elements {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.login-form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+}
+
+.password-reminder {
+    display: inline-block;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+.facebook-icon {
+    font-size: 24px;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.form-input {
+    padding-top: 0;
+}
+
+.background-btn-fb {
+    background-color: rgb(44, 0, 126);
+}
+
+.disclaimer-text {
+    font-size: 14px
+}

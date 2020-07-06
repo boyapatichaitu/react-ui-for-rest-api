@@ -5,7 +5,7 @@ import * as actions from '../../redux/actions/actions';
 const Header = (props) => {
     return (
         <nav className="navbar navbar-expand navbar-light bg-white">
-            <span className="navbar-brand h1 mr-auto" href="#">Navbar</span>
+            <span className="navbar-brand h1 mr-auto" href="#">Dashboard</span>
 
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item dropdown">

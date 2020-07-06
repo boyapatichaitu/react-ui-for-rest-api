@@ -1,7 +1,9 @@
 import * as actions from "./actions/actions"
 
-const token = JSON.parse(sessionStorage.getItem('auth')),
-    user = JSON.parse(localStorage.getItem('user')),
+const auth = sessionStorage.getItem('auth'),
+    userData = localStorage.getItem('user'),
+    token = JSON.parse(auth !== 'undefined' ? auth : null),
+    user = JSON.parse(userData !== 'undefined' ? userData : null),
     initialState = {
         token,
         user,

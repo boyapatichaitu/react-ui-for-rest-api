@@ -48,10 +48,17 @@ export const handleLoginOrSignUp = (user, url) => {
         })
             .then(response => response.json())
             .then(data => {
-                sessionStorage.setItem('auth', JSON.stringify(data.token));
-                localStorage.setItem('user', JSON.stringify(data.user));
-                dispatch(userActionStatus("You are Logged In"));
-                dispatch(userData(data));
+                console.log(data)
+                if (data.message) {
+                    dispatch(userActionStatus(data.message + ' ' + data.nextStep));
+                }
+                else {
+                    sessionStorage.setItem('auth', JSON.stringify(data.token));
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    dispatch(userActionStatus("You are Logged In"));
+                    dispatch(userData(data));
+                }
+
             })
             .catch(err => console.error('Error: ', err));
     };
@@ -69,15 +76,15 @@ export const updateUser = (user, url, token) => {
             body: JSON.stringify(user)
         })
             .then(response => {
-                if (response.status === 403 || response.status === 401){
+                if (response.status === 403 || response.status === 401) {
                     dispatch(userActionStatus("Time-up, login and try again"));
                     logout();
                 }
                 return response.json()
             })
             .then(data => {
-                if(data)
-                dispatch(userActionStatus(data.message + ' ' + data.nextStep));
+                if (data)
+                    dispatch(userActionStatus(data.message + ' ' + data.nextStep));
             })
             .catch(err => console.error('Error: ', err));
     };
@@ -95,15 +102,15 @@ export const deleteUser = (user, url, token) => {
             body: JSON.stringify(user)
         })
             .then(response => {
-                if (response.status === 403 || response.status === 401){
+                if (response.status === 403 || response.status === 401) {
                     dispatch(userActionStatus("Time-up, login and try again"));
                     logout();
                 }
                 return response.json()
             })
             .then(data => {
-                if(data)
-                dispatch(userActionStatus(data.message + ' ' + data.nextStep));
+                if (data)
+                    dispatch(userActionStatus(data.message + ' ' + data.nextStep));
             })
             .catch(err => console.error('Error: ', err));
     };
